@@ -1,0 +1,107 @@
+<dl class="lineD">
+      <dt>面积：</dt>
+      <dd>
+        <input name="total_area" id='total_area' type="text" size="55" value="{$total_area}">
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>优惠信息：</dt>
+      <dd>
+        <input name="benefit_info" id='benefit_info' type="text" size="55" value="{$benefit_info}">
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>剩余套数：</dt>
+      <dd>
+        <input name="remaining_house" id='remaining_house' type="text" size="55" value="{$remaining_house}"> 套
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>楼层：</dt>
+      <dd>
+        <input name="floor" id='floor' type="text" size="55" value="{$floor}">
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>图片：</dt>
+      <dd>
+        <input name="cover" type="file" style="width:300px; height:20px; border:1px solid #CCC;" />(选填，格式最好为640*360的宽图)
+        <php>if (strlen($cover)>0) {</php>
+        <br/><img src="__UPLOAD__/{$cover}" style="height:180px; border:1px solid #CCC;"/>
+        <php> } </php>
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>视频：</dt>
+      <dd>
+        <input name="smallcover" type="file" style="width:300px; height:20px; border:1px solid #CCC;" />(必填，格式最好为120*90的宽图)
+        <php>if (strlen($smallcover)>0) {</php>
+        <br/><img src="__UPLOAD__/{$smallcover}" style="height:90px; border:1px solid #CCC;"/>
+        <php> } </php>
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>入住时间：</dt>
+      <dd>
+        <input name="movedate" id='movedate' type="text" size="25" value="{$movedate}"> (必填)
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>建筑类型：</dt>
+      <dd>
+        <select name="building_structure" id='building_structure'>
+        	<option value='0'>请选择</option>
+        	<php>
+        		foreach($building_structures as $_key=>$_value){
+        			if ($building_structure == $_key){
+        				echo "<option value='".$_key."' selected>".$_value."</option>";
+        			} else {
+        				echo "<option value='".$_key."'>".$_value."</option>";
+        			}
+        		}
+			</php>
+		</select> (必填)
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>产权：</dt>
+      <dd>
+        <input name="property_rights" id='property_rights' type="text" size="25" value="{$property_rights}"> (必填)
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>产权年限：</dt>
+      <dd>
+        <input name="property_rights_years" id='property_rights_years' type="text" size="25" value="{$property_rights_years}"> 年(必填)
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>住户：</dt>
+      <dd>
+        <input name="household" id='household' type="text" size="25" value="{$household}"> 户(必填)
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>绿化率：</dt>
+      <dd>
+        <input name="greening_rate" id='greening_rate' type="text" size="25" value="{$greening_rate}"> (必填)
+	  </dd>
+    </dl>
+	<dl class="lineD">
+      <dt>户型：</dt>
+      <dd>
+        <input name="house_type" id='house_type' type="text" size="25" value="{$house_type}"> (必填)
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>交通：</dt>
+      <dd>
+        <input name="traffic" id='traffic' type="text" size="25" value="{$traffic}"> (必填)
+	  </dd>
+    </dl>
+    <dl class="lineD">
+      <dt>标签：</dt>
+      <dd>
+        <input name="tag" id='tag' type="text" size="50" value="{$tag}"> 格式 期房:大产权:有地铁:设施   中间以:分隔(必填)
+	  </dd>
+    </dl>
